@@ -77,7 +77,7 @@ jobs:
     #  run: |
     #    git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku   
   
-    - name: Configuration Customization - Build_Redmi_AC2100
+    - name: Configuration Customization - Build_Xiaomi_AC2100
       env:
         CONFIG_FILE: 'xaomi_ac2100.config'
       run: |
