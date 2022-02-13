@@ -82,12 +82,20 @@ jobs:
       run: |
         git clone https://github.com/OpenWrt-Actions/openwrt-package-lienol package/openwrt-package-lienol
         
-    - name: Import external feeds - JerryKuKu Argon
-      working-directory: ./openwrt
-      run: |
-        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku 
+    #- name: Import external feeds - JerryKuKu Argon
+      #working-directory: ./openwrt
+      #run: |
+      
+        #git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-jerrykuku 
         #git clone https://github.com/OpenWrt-Actions/openwrt-package-lienol package/openwrt-package-lienol
         #git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
+    - name: Install Extra Packages
+      run: |
+        cd openwrt/package
+        rm -rf lean/luci-theme-argon
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+        
+        
   
     - name: Configuration Customization - Build_Xiaomi_AC2100
       env:
