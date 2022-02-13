@@ -77,7 +77,11 @@ jobs:
       run: |
         git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
     #    git clone "your_github_link" package/"your_folder_name" 
-    
+    - name: Install Extra Packages
+      run: |
+        cd openwrt/package
+        rm -rf lean/luci-theme-argon
+        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
     #- name: Import external feeds - JerryKuKu Argon
     #  working-directory: ./openwrt
     #  run: |
